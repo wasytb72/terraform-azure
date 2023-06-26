@@ -1,0 +1,33 @@
+Variables:
+https://jamesmiller.blog/terraform-variable-types/
+
+Simple variable:
+String
+Number
+Bool
+
+Complex variable:
+List (ordered)
+Set (not ordered)
+Map
+Object ({<ATTR NAME> = <TYPE>})
+Tuple ([<TYPE>,..])
+
+
+Console actions:
+
+terraform version (see version)
+terraform console (enter console mode) from there:
+    see main.tf has all the variables declaration
+    to echo the varianbles:
+        1. var.<name of the variable>
+        2. var.<name of the variable>[index] to call for an element (list, tubple or object)
+        3. element(var.<name of the variable>, integer) same than 2
+        4. slice (var.<name of the variable>, integer, integer) range from to.
+        5. Sample resource file to create a Resource Group with a tfvars file overriding the default location. terraform plan and appy with
+            -var-file="<name of the file>.tfvars parameter
+Deploy a single linux VM:
+<Inside this folder from an account logged in Azure via CLI>
+terraform plan
+terraform apply
+terraform destroy
